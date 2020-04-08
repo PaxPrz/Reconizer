@@ -1,0 +1,10 @@
+{% extends 'reconizer/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1> Home Page</h1>
+    {% if user.is_authenticated %}
+        <p>Hello {{user.username}}</p>
+    {% endif %}
+{% endblock %}

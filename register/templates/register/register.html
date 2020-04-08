@@ -1,0 +1,26 @@
+{% extends 'reconizer/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-8">
+        <div style="text-align:center; margin-top:40px;">
+            <h1>Create new Account </h1>
+            <hr style="width:50%;">
+        </div>
+        <form method="POST" class="form-group">
+            {% csrf_token %}
+            {{form|crispy}}
+            <p>Already Have an account? Click <a href={% url "login" %}>Here</a></p>
+            <button type="submit" class="btn btn-success">Register</button>
+        </form>
+    </div>
+    <div class="col-sm-2">
+    </div>
+</div>
+{% endblock %}
